@@ -5,10 +5,6 @@ interface ButtonProps {
   btnText: string;
   variant: string;
   size: string;
-  post?: {
-    id: string;
-    text: string;
-  };
   onClick: () => void;
 }
 
