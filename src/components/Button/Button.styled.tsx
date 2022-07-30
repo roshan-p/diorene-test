@@ -1,27 +1,30 @@
 import styled, { css } from "styled-components";
+import  * as color from '../../common/color';
+
+
 const getButtonVariant = (variant: string) => {
   switch (variant) {
     case "primary":
       return css`
-        background-color: #5f2eea;
-        color: #ffffff;
+        background-color: ${color?.PRIMARY_PURPLE};
+        color: ${color?.COMMON_WHITE};
 
         &:not(:disabled):hover {
-          background-color: #1d0071;
-          color: #ffffff;
-          border: 1px solid #1d0071;
+          background-color: ${color?.PRIMARY_BLUE};
+          color: ${color?.COMMON_WHITE};
+          border: 1px solid ${color?.PRIMARY_BLUE};
         }
       `;
     case "secondary":
       return css`
         background-color: transparent;
-        border: 1px solid #000000;
-        color: #000000;
+        border: 1px solid ${color?.COMMON_BLACK};
+        color: ${color?.COMMON_BLACK};
 
         &:not(:disabled):hover {
           background-color: transparent;
-          border: 1px solid #000000;
-          color: #000000;
+          border: 1px solid ${color?.COMMON_BLACK};
+          color: ${color?.COMMON_BLACK};
         }
       `;
   }

@@ -1,0 +1,5 @@
+const PRIMARY_PURPLE = "#5f2eea";
+const PRIMARY_BLUE = "##1d0071";
+const COMMON_WHITE = "#ffffff";
+const COMMON_BLACK = "#000000";
+export { PRIMARY_PURPLE, PRIMARY_BLUE, COMMON_WHITE, COMMON_BLACK };
