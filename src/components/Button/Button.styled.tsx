@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
-import  * as color from '../../common/color';
-
+import * as color from "../../common/color";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const getButtonVariant = (variant: string) => {
   switch (variant) {
@@ -8,11 +8,15 @@ const getButtonVariant = (variant: string) => {
       return css`
         background-color: ${color?.PRIMARY_PURPLE};
         color: ${color?.COMMON_WHITE};
-
         &:not(:disabled):hover {
           background-color: ${color?.PRIMARY_BLUE};
           color: ${color?.COMMON_WHITE};
           border: 1px solid ${color?.PRIMARY_BLUE};
+        }
+        &:disabled {
+          border: 1px solid ${color?.DISABLE_PURPLE};
+          background-color: ${color?.DISABLE_PURPLE};
+          color: ${color?.COMMON_WHITE};
         }
       `;
     case "secondary":
@@ -26,6 +30,23 @@ const getButtonVariant = (variant: string) => {
           border: 1px solid ${color?.COMMON_BLACK};
           color: ${color?.COMMON_BLACK};
         }
+        &:disabled {
+          border: 1px solid ${color?.DISABLE_GREY};
+          color: ${color?.DISABLE_GREY};
+        }
+      `;
+  }
+};
+const LoaderVariant = (variant: string) => {
+  switch (variant) {
+    case "primary":
+      return css`
+        color: ${color?.COMMON_WHITE} !important;
+
+      `;
+    case "secondary":
+      return css`
+      color: ${color?.COMMON_BLACK} !important;
       `;
   }
 };
@@ -41,8 +62,7 @@ const getButtonSize = (size: string) => {
         line-height: 24px;
         letter-spacing: 0px;
         text-align: center;
-
-        `;
+      `;
     case "md":
       return css`
         width: 195.66px;
@@ -71,6 +91,14 @@ const getButtonSize = (size: string) => {
             `;
   }
 };
+export const Loader = styled(CircularProgress)<{
+  buttonVariant: string;
+
+}>`
+${({ buttonVariant }) => LoaderVariant(buttonVariant)};
+`
+
+
 export const StyledButton = styled.button<{
   variant: string;
   size: string;
@@ -80,6 +108,6 @@ export const StyledButton = styled.button<{
   padding: 18px 32p 18px 32px;
   outline: none;
   cursor: pointer;
-
   ${({ variant }) => getButtonVariant(variant)};
 `;
+

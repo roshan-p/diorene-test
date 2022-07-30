@@ -6,20 +6,26 @@ function App() {
     <div className="App">
       <p>Diorene tech</p>
       <Button
+        disabled={true}
         size={"lg"}
+        isLoading
         btnText={"Submit LG P"}
         variant={"primary"}
         onClick={() => console.log("CLICK LG P")}
       />
       <div className="separater"></div>
       <Button
+        disabled={true}
         size={"lg"}
+        isLoading
         btnText={"Submit LG S"}
         variant={"secondary"}
         onClick={() => console.log("CLICK LG S")}
       />
       <div className="separater"></div>
       <Button
+        disabled={false}
+        isLoading={false}
         size={"md"}
         btnText={"Submit MD P"}
         variant={"primary"}
@@ -27,6 +33,8 @@ function App() {
       />
       <div className="separater"></div>
       <Button
+        disabled={false}
+        isLoading={false}
         size={"md"}
         btnText={"Submit MD S"}
         variant={"secondary"}
@@ -34,6 +42,8 @@ function App() {
       />
       <div className="separater"></div>
       <Button
+        disabled={false}
+        isLoading={false}
         size={"sm"}
         btnText={"Submit SM P"}
         variant={"primary"}
@@ -41,6 +51,8 @@ function App() {
       />
       <div className="separater"></div>
       <Button
+        disabled={false}
+        isLoading
         size={"sm"}
         btnText={"Submit SM S"}
         variant={"secondary"}
